@@ -1,0 +1,9 @@
+name = "Zhipu International"
+base_url = "https://api.z.ai"
+
+models_url = "/api/coding/paas/v4/models"
+
+[protocols]
+anthropic = "/api/anthropic"
+openai_chat = "/api/coding/paas/v4/chat/completions"
+openai_responses = "/api/coding/paas/v4/responses"

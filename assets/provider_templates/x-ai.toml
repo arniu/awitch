@@ -1,0 +1,9 @@
+name = "xAI"
+base_url = "https://api.x.ai"
+
+models_url = "/v1/models"
+
+[protocols]
+openai_chat = {}
+openai_responses = {}
+

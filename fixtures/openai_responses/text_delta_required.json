@@ -1,0 +1,9 @@
+[
+  "type",
+  "item_id",
+  "output_index",
+  "content_index",
+  "delta",
+  "sequence_number",
+  "logprobs"
+]

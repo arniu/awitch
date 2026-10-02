@@ -1,0 +1,10 @@
+name = "Xiaomi MiMo"
+base_url = "https://api.xiaomimimo.com"
+
+models_url = "/v1/models"
+
+[protocols]
+anthropic = "/anthropic"
+openai_chat = {}
+openai_responses = {}
+

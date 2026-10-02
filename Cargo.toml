@@ -1,0 +1,40 @@
+[package]
+name = "awitch"
+version = "0.1.0"
+edition = "2024"
+description = "A local gateway"
+license = "MIT"
+
+[workspace]
+resolver = "2"
+members = ["crates/supervisor", "crates/money", "xtask", "."]
+
+[dependencies]
+supervisor = { path = "crates/supervisor" }
+money = { path = "crates/money", features = ["rusqlite", "serde"] }
+
+anyhow = "1"
+bytes = "1"
+http = "1"
+axum = "0.8.9"
+chrono = "0.4"
+clap = { version = "4.6.6", features = ["derive"] }
+clap_complete = "4.6.9"
+dirs = "6.0.0"
+futures-util = "0.3.34"
+json5 = "1.3.1"
+rand = "0.10.2"
+reqwest = { version = "0.13.4", default-features = false, features = ["json", "stream", "rustls", "blocking"] }
+rusqlite = { version = "0.40.2", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+serde_yaml = "0.9.34"
+subtle = "2.6.1"
+thiserror = "2.0.20"
+tokio = { version = "1.53.1", features = ["full"] }
+tokio-cron-scheduler = "0.15"
+toml = { version = "1.1.4", features = ["preserve_order"] }
+tracing = "0.1"
+tracing-appender = "0.2"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+url = "2.5.6"

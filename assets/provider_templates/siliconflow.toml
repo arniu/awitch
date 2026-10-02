@@ -1,0 +1,9 @@
+name = "SiliconFlow"
+base_url = "https://api.siliconflow.cn"
+
+models_url = "/v1/models"
+balance_url = "/v1/user/info"
+
+[protocols]
+anthropic = {}
+openai_chat = {}

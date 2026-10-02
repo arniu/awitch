@@ -1,0 +1,11 @@
+name = "DeepSeek"
+base_url = "https://api.deepseek.com"
+
+models_url = "/v1/models"
+balance_url = "/user/balance"
+
+[protocols]
+anthropic = "/anthropic"
+openai_chat = {}
+openai_responses = {}
+

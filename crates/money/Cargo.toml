@@ -1,0 +1,21 @@
+[package]
+name = "money"
+version = "0.1.0"
+edition = "2024"
+description = "Fixed-point money"
+license = "MIT"
+# Internal workspace crate — never published to crates.io.
+publish = false
+
+[dependencies]
+thiserror = "2.0.20"
+
+serde = { version = "1", features = ["derive"], optional = true }
+rusqlite = { version = "0.40", optional = true }
+
+[dev-dependencies]
+serde_json = "1"
+
+[features]
+serde = ["dep:serde"]
+rusqlite = ["dep:rusqlite"]

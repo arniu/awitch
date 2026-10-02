@@ -1,0 +1,10 @@
+name = "Moonshot AI"
+base_url = "https://api.moonshot.cn"
+
+models_url = "/v1/models"
+
+[protocols]
+anthropic = "/anthropic"
+openai_chat = {}
+openai_responses = {}
+

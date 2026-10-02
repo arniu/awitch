@@ -1,0 +1,12 @@
+[package]
+name = "supervisor"
+version = "0.1.0"
+edition = "2024"
+description = "Generic OS supervisor integration."
+license = "MIT"
+# Internal workspace crate — never published to crates.io.
+publish = false
+
+[dependencies]
+dirs = "6.0.0"
+thiserror = "2"

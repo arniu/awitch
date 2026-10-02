@@ -1,0 +1,16 @@
+[
+  "id",
+  "object",
+  "created_at",
+  "error",
+  "incomplete_details",
+  "instructions",
+  "model",
+  "tools",
+  "output",
+  "parallel_tool_calls",
+  "metadata",
+  "tool_choice",
+  "temperature",
+  "top_p"
+]

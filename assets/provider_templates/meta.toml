@@ -1,0 +1,6 @@
+name = "Meta Llama"
+base_url = "https://api.meta.ai"
+
+[protocols]
+openai_chat = {}
+openai_responses = {}

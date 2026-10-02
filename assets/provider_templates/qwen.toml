@@ -1,0 +1,9 @@
+name = "Qwen"
+base_url = "https://dashscope.aliyuncs.com"
+
+models_url = "/compatible-mode/v1/models"
+
+[protocols]
+anthropic = "/apps/anthropic"
+openai_chat = "/compatible-mode/v1/chat/completions"
+openai_responses = "/compatible-mode/v1/responses"

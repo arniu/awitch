@@ -1,0 +1,8 @@
+name = "Xiaomi MiMo Token-Plan"
+base_url = "https://token-plan-cn.xiaomimimo.com"
+
+models_url = "/v1/models"
+
+[protocols]
+openai_chat = {}
+openai_responses = {}

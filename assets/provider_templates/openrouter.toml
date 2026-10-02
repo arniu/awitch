@@ -1,0 +1,10 @@
+name = "OpenRouter"
+base_url = "https://openrouter.ai"
+
+models_url = "/api/v1/models"
+balance_url = "/api/v1/credits"
+
+[protocols]
+anthropic = "/api/v1/messages"
+openai_chat = "/api/v1/chat/completions"
+openai_responses = "/api/v1/responses"

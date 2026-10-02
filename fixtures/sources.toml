@@ -1,0 +1,474 @@
+# Notes on the corpus that no generated file carries.
+#
+# A `recorded` grade means an upstream capture whose ids are unique across the
+# corpus: a stream that reuses a capture's ids is maintainer-authored however it
+# was obtained, and is graded `synthetic`.
+#
+# No source here publishes these, so nothing is vendored for them: the anthropic
+# `error` event; the chat `{"error": …}` frame and the `content_filter` finish
+# reason; a recorded or example instance of the responses `response.failed`,
+# `response.error`, `response.incomplete`,
+# `response.function_call_arguments.delta` and `.done` events — the last three are
+# asserted against their extracted `required` lists instead, and the first two have
+# no evidence of any grade.
+
+[[source]]
+repo = "anthropics/anthropic-sdk-python"
+rev = "0af0190679a9e80388bd1b0328d557c9a91a11b2"
+license = "MIT"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "recorded"
+path = "tests/lib/streaming/fixtures/basic_response.txt"
+local = "basic_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/lib/streaming/fixtures/message_delta_omitted_usage_response.txt"
+local = "message_delta_omitted_usage_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/lib/streaming/fixtures/message_delta_fields_response.txt"
+local = "message_delta_fields_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "recorded"
+path = "tests/lib/streaming/fixtures/tool_use_response.txt"
+local = "tool_use_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/lib/streaming/fixtures/tool_use_invalid_json_response.txt"
+local = "tool_use_invalid_json_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "recorded"
+path = "tests/lib/streaming/fixtures/incomplete_partial_json_response.txt"
+local = "incomplete_partial_json_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/lib/streaming/fixtures/refusal_response.txt"
+local = "refusal_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "recorded"
+path = "tests/lib/streaming/fixtures/server_tool_use_response.txt"
+local = "server_tool_use_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/lib/streaming/fixtures/compaction_response.txt"
+local = "compaction_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/lib/streaming/fixtures/context_management_response.txt"
+local = "context_management_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/lib/streaming/fixtures/fallback_response.txt"
+local = "fallback_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/lib/streaming/fixtures/fallback_credit_response.txt"
+local = "fallback_credit_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/lib/streaming/fixtures/input_transformations_delta_response.txt"
+local = "input_transformations_delta_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/lib/streaming/fixtures/input_transformations_empty_delta_response.txt"
+local = "input_transformations_empty_delta_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/lib/streaming/fixtures/input_transformations_start_only_response.txt"
+local = "input_transformations_start_only_response.txt"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/fixtures/fable-fallback/stream-a-refusal.sse"
+local = "stream-a-refusal.sse"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/fixtures/fable-fallback/stream-a-toolrefusal.sse"
+local = "stream-a-toolrefusal.sse"
+
+[[source.fixture]]
+protocol = "anthropic"
+kind = "synthetic"
+path = "tests/fixtures/fable-fallback/stream-b-fallback.sse"
+local = "stream-b-fallback.sse"
+
+[[source]]
+repo = "openai/openai-python"
+rev = "8c72a700d900fb2578227df564a54462abfe67f8"
+license = "Apache-2.0"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "recorded"
+path = ".inline-snapshot/external/e2aad469b71d1d4894ff833ea147020a9d875eb7ce644a0ff355581690a4cbfd.bin"
+local = "text_stream.sse"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "recorded"
+path = ".inline-snapshot/external/7e5ea4d12e7cc064399b6631415e65923f182256b6e6b752950a3aaa2ad2320a.bin"
+local = "pydantic_model.sse"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "recorded"
+path = ".inline-snapshot/external/a491adda08c3d4fde95f5b2ee3f60f7f745f1a56d82e62f58031cc2add502380.bin"
+local = "pydantic_model_multiple_choices.sse"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "recorded"
+path = ".inline-snapshot/external/4cc50a6135d254573a502310e6af1246f55edb6ad95fa24059f160996b68866d.bin"
+local = "max_tokens_reached.sse"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "recorded"
+path = ".inline-snapshot/external/173417d553406f034f643e5db3f8d591fb691ebac56f5ae39a22cc7d455c5353.bin"
+local = "refusal.sse"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "recorded"
+path = ".inline-snapshot/external/83b060bae42eb41c4f1edbb7c1542b954b37d9dfd1910b964ddebc9677e6ae85.bin"
+local = "content_logprobs.sse"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "recorded"
+path = ".inline-snapshot/external/569c877e69429d4cbc1577d2cd6dd33878095c68badc6b6654a69769b391a1c1.bin"
+local = "refusal_logprobs.sse"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "recorded"
+path = ".inline-snapshot/external/c6aa7e397b7123c3501f25df3a05d4daf7e8ad6d61ffa406ab5361fe36a8d5b1.bin"
+local = "tool_call.sse"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "recorded"
+path = ".inline-snapshot/external/f82268f2fefd5cfbc7eeb59c297688be2f6ca0849a6e4f17851b517310841d9b.bin"
+local = "multiple_tool_calls.sse"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "recorded"
+path = ".inline-snapshot/external/a247c49c5fcd492bfb7a02a3306ad615ed8d8f649888ebfddfbc3ee151f44d46.bin"
+local = "strict_tools.sse"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "recorded"
+path = ".inline-snapshot/external/d615580118391ee13492193e3a8bb74642d23ac1ca13fe37cb6e889b66f759f6.bin"
+local = "non_pydantic_response_format.sse"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "recorded"
+path = ".inline-snapshot/external/2018feb66ae13fcf5333d61b95849decc68d3f63bd38172889367e1afb1e04f7.bin"
+local = "non_strict_tools.sse"
+
+[[source]]
+repo = "openai/openai-openapi"
+rev = "7de0436e058814c8fab9bf18b60208e5f79762d3"
+license = "MIT"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-example"
+path = "openapi.json"
+local = "chat_completion_tool_calls.json"
+extract = "/paths/~1chat~1completions/post/x-oaiMeta/examples/3/response"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_completion_required.json"
+extract = "/components/schemas/CreateChatCompletionResponse/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_choice_required.json"
+extract = "/components/schemas/CreateChatCompletionResponse/properties/choices/items/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_chunk_required.json"
+extract = "/components/schemas/CreateChatCompletionStreamResponse/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_chunk_choice_required.json"
+extract = "/components/schemas/CreateChatCompletionStreamResponse/properties/choices/items/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_usage_required.json"
+extract = "/components/schemas/CompletionUsage/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_request_required.json"
+extract = "/components/schemas/CreateChatCompletionRequest/allOf/1/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_system_message_required.json"
+extract = "/components/schemas/ChatCompletionRequestSystemMessage/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_user_message_required.json"
+extract = "/components/schemas/ChatCompletionRequestUserMessage/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_assistant_message_required.json"
+extract = "/components/schemas/ChatCompletionRequestAssistantMessage/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_tool_message_required.json"
+extract = "/components/schemas/ChatCompletionRequestToolMessage/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_tool_required.json"
+extract = "/components/schemas/ChatCompletionTool/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_function_object_required.json"
+extract = "/components/schemas/FunctionObject/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_tool_call_required.json"
+extract = "/components/schemas/ChatCompletionMessageToolCall/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_tool_call_function_required.json"
+extract = "/components/schemas/ChatCompletionMessageToolCall/properties/function/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_tool_call_chunk_required.json"
+extract = "/components/schemas/ChatCompletionMessageToolCallChunk/required"
+
+[[source.fixture]]
+protocol = "openai_chat"
+kind = "spec-schema"
+path = "openapi.json"
+local = "chat_response_message_required.json"
+extract = "/components/schemas/ChatCompletionResponseMessage/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-example"
+path = "openapi.json"
+local = "stream_sample.sse"
+extract = "/paths/~1responses/post/x-oaiMeta/examples/5/response"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "created_required.json"
+extract = "/components/schemas/ResponseCreatedEvent/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "completed_required.json"
+extract = "/components/schemas/ResponseCompletedEvent/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "incomplete_required.json"
+extract = "/components/schemas/ResponseIncompleteEvent/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "output_item_added_required.json"
+extract = "/components/schemas/ResponseOutputItemAddedEvent/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "output_item_done_required.json"
+extract = "/components/schemas/ResponseOutputItemDoneEvent/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "content_part_added_required.json"
+extract = "/components/schemas/ResponseContentPartAddedEvent/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "content_part_done_required.json"
+extract = "/components/schemas/ResponseContentPartDoneEvent/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "text_delta_required.json"
+extract = "/components/schemas/ResponseTextDeltaEvent/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "text_done_required.json"
+extract = "/components/schemas/ResponseTextDoneEvent/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "arguments_delta_required.json"
+extract = "/components/schemas/ResponseFunctionCallArgumentsDeltaEvent/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "arguments_done_required.json"
+extract = "/components/schemas/ResponseFunctionCallArgumentsDoneEvent/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "output_text_content_required.json"
+extract = "/components/schemas/OutputTextContent/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "output_message_required.json"
+extract = "/components/schemas/OutputMessage/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "function_call_required.json"
+extract = "/components/schemas/FunctionToolCall/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "usage_required.json"
+extract = "/components/schemas/ResponseUsage/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "response_required.json"
+extract = "/components/schemas/Response/allOf/2/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "usage_details_required.json"
+extract = "/components/schemas/ResponseUsage/properties/input_tokens_details/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "input_message_required.json"
+extract = "/components/schemas/EasyInputMessage/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "function_call_output_required.json"
+extract = "/components/schemas/FunctionCallOutputItemParam/required"
+
+[[source.fixture]]
+protocol = "openai_responses"
+kind = "spec-schema"
+path = "openapi.json"
+local = "function_tool_required.json"
+extract = "/components/schemas/FunctionTool/required"

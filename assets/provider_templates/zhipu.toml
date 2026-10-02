@@ -1,0 +1,10 @@
+name = "Zhipu"
+base_url = "https://open.bigmodel.cn"
+
+models_url = "/api/coding/paas/v4/models"
+balance_url = "/api/monitor/usage/quota/limit"
+
+[protocols]
+anthropic = "/api/anthropic"
+openai_chat = "/api/coding/paas/v4/chat/completions"
+openai_responses = "/api/coding/paas/v4/responses"

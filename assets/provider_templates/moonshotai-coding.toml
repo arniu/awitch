@@ -1,0 +1,9 @@
+name = "Kimi For Coding"
+base_url = "https://api.kimi.com"
+
+models_url = "/coding/v1/models"
+balance_url = "/coding/v1/usages"
+
+[protocols]
+anthropic = "/coding/"
+openai_chat = "/coding/v1/chat/completions"
