@@ -4,4 +4,3 @@ set -euxo pipefail
 ./script/fmt-check
 cargo clippy --workspace --all-targets -- -D warnings
 cargo test --workspace --locked
-cargo xtask fixtures check

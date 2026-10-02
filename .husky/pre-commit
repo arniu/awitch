@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if ! ./script/fmt-check; then
+    exit 1
+fi

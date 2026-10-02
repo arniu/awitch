@@ -549,6 +549,11 @@ fn short(digest: &str) -> &str {
 mod tests {
     use super::*;
 
+    #[test]
+    fn the_vendored_corpus_verifies() {
+        check().expect("the checked-in fixtures match CHECKSUMS.sha256 and sources.toml");
+    }
+
     fn resolved(dir: &str, text: &str) -> Vec<String> {
         include_targets(text)
             .into_iter()
