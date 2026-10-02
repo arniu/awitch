@@ -1,2 +1,4 @@
+* text=auto eol=lf
+
 # Vendored fixtures are checksummed byte-for-byte — never translate line endings.
 fixtures/** -text
